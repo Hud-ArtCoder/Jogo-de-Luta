@@ -26,12 +26,10 @@ abstract public class Lutador {
 
 
         abstract public void atacar(Lutador oponente);
-        abstract public void especial (Lutador oponente);
+        abstract public void especial(Lutador oponente);
+        abstract public void defender(Lutador oponente);
 
-        public void defender(Lutador oponente) {
-            this.energia += 50;
-            System.out.println(" Jogador " + this.nome + " Bloqueou o ataque de " + oponente.nome);
-        }
+
 
         public void mostrarStatus() {
 
@@ -52,7 +50,5 @@ abstract public class Lutador {
             }
 
         }
-
-    }
 
 }
