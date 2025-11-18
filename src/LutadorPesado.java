@@ -22,7 +22,7 @@ public class LutadorPesado extends Lutador{
         if (this.energia == 100){
             System.out.println("Lutador" +this.nome+ " Defendeu ataque de " +oponente.nome);
         }else if (this.energia < 100){
-            energia == ;
+            energia += 5;
             System.out.println("Lutador" +this.nome+ " Defendeu ataque de " +oponente.nome+ " recarregando a energia");
 
         }

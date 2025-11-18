@@ -19,7 +19,12 @@ public class LutadorMedio extends Lutador {
 
     @Override
     public void defender(Lutador oponente) {
-        this.energia += 10;
-        System.out.println("Lutador" +this.nome+ " Defendeu ataque de " +oponente.nome);
+        if (this.energia == 100){
+            System.out.println("Lutador" +this.nome+ " Defendeu ataque de " +oponente.nome);
+        }else if (this.energia < 100){
+            energia += 5;
+            System.out.println("Lutador" +this.nome+ " Defendeu ataque de " +oponente.nome+ " recarregando a energia");
+
+        }
     }
 }
