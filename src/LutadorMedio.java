@@ -8,13 +8,28 @@ public class LutadorMedio extends Lutador {
         int dano = forca;
         oponente.vida -= forca;
         System.out.println("Jogador " + this.nome + " Atacou " + oponente.nome);
+
+        if (oponente.vida < 0 ){
+            throw new ArithmeticException("Oponente está nocauteado");
+        }else {
+            System.out.println("Oponente ainda resiste");
+        }
     }
 
     @Override
     public void especial(Lutador oponente) {
+        if (this.energia < energia){
+            throw new ArithmeticException("Não possui energia suficiente");
+
+        }else {
+
+            System.out.println("É possivel atacar");
+        }
+
         this.energia -= energia;
-        oponente.vida -= 75;
-        System.out.println("Jogador" +this.nome+"Executou um especial em"+ oponente.nome);
+        oponente.vida -= 90;
+        System.out.println("Jogador " + this.nome + " Executou um especial em " + oponente.nome);
+
     }
 
     @Override
