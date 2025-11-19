@@ -6,14 +6,19 @@ public class LutadorLeve extends Lutador{
     @Override
     public void atacar (Lutador oponente){
 
-        int dano = forca;
-        oponente.vida -= forca;
-        System.out.println("Jogador " + this.nome + " Atacou " + oponente.nome);
+        try {
+            int dano = forca;
+            oponente.vida -= forca;
+            System.out.println("Jogador " + this.nome + " Atacou " + oponente.nome);
 
-        if (oponente.vida < 0 ){
-            throw new ArithmeticException("Oponente está nocauteado");
-        }else {
-            System.out.println("Oponente ainda resiste");
+            if (oponente.vida == 0) {
+                System.out.println("Oponente " + oponente.nome + "está nocauteado, não é possivel atacar ");
+            } else if (oponente.vida > 0){
+                System.out.println("Continue atacando ");
+            }
+        }catch (ArithmeticException e ){
+            System.out.println("Erro " + e.getMessage());
+
         }
 
     }
